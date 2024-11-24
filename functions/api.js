@@ -14,7 +14,7 @@ const corsOptions = {
 
 const port = process.env.PORT || 3030;
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 const router = express.Router();
 
 router.use(
