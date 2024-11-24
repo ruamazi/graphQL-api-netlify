@@ -9,6 +9,7 @@ const serverless = require("serverless-http");
 const port = process.env.PORT || 3030;
 const app = express();
 app.use(cors());
+const router = express.Router();
 
 app.use(
   "/graphql",
