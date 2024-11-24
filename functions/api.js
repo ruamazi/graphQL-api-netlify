@@ -7,14 +7,14 @@ const connectDB = require("../config/db.js");
 const serverless = require("serverless-http");
 
 const corsOptions = {
-  origin: process.env.FRONT_URL,
+  origin: "*",
   methods: "*",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 const port = process.env.PORT || 3030;
-const app = express();
-app.use(cors(corsOptions));
+const app = express(corsOptions);
+app.use(cors());
 const router = express.Router();
 
 router.use(
