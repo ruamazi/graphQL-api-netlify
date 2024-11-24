@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
   res.json({ message: "welcome to the API" });
 });
 
-router.listen(port, () => {
+app.listen(port, () => {
   connectDB();
   console.log(`Server running on port: ${port}`);
 });
