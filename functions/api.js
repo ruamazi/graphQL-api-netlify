@@ -11,16 +11,16 @@ const app = express();
 app.use(cors());
 const router = express.Router();
 
-app.use(
+router.use(
   "/graphql",
   graphqlHTTP({ schema, graphiql: process.env.NODE_ENV === "dev" })
 );
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.json({ message: "welcome to the API" });
 });
 
-app.listen(port, () => {
+router.listen(port, () => {
   connectDB();
   console.log(`Server running on port: ${port}`);
 });
