@@ -17,10 +17,7 @@ const app = express(corsOptions);
 app.use(cors());
 const router = express.Router();
 
-router.use(
-  "/graphql",
-  graphqlHTTP({ schema, graphiql: process.env.NODE_ENV === "dev" })
-);
+router.use("/graphql", graphqlHTTP({ schema, graphiql: true }));
 
 router.get("/", (req, res) => {
   res.json({ message: "welcome to the API" });
